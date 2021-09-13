@@ -12,7 +12,20 @@ const Book = (({book}) => {
 
     // const olid = book.key.split('/')[2];
     const olid = book.edition_key[0];
-    console.log(olid)
+
+    const formatDate = (date) => {
+        const re = /\d{4}/;
+        return date.match(re);
+        // if (date.includes(',')) {
+        //     return date.split(',')[1];
+        // } else if (date.includes(' ')) {
+        //     return date.split(' ')[1];
+        // } else {
+        //     return date;
+        // }
+    }
+
+    const date = formatDate(book.publish_date[0]);
     
 
     return (
@@ -22,7 +35,7 @@ const Book = (({book}) => {
             </div>
             <h2>{book.title}</h2>
             <h3>{book.author_name[0]}</h3>
-            <p>{book.publish_date[0]}</p>
+            <p>{date}</p>
         </li>
     )
 })
