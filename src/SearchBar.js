@@ -6,7 +6,13 @@ const SearchBar = ({setBooks}) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        fetch('http://openlibrary.org/search.json?q=the+great+gatsby')
+
+        const url = new URL('http://openlibrary.org/search.json');
+        url.search = new URLSearchParams({
+            q: query
+        });
+
+        fetch(url)
             .then((response) => {
                 return response.json();
             })

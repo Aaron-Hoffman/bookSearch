@@ -3,7 +3,7 @@ const SortOption = (({name, text, options}) => {
         <>
             <label htmlFor={name}>{text}</label>
             <select name={name} id={name}>
-                {options.map(option => <option value={option}>{option}</option>)}
+                {options.map((option, index) => <option value={option} key={index}>{option}</option>)}
             </select>
         </>
     )
