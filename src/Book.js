@@ -1,5 +1,3 @@
-import { useState,useEffect } from "react";
-
 const Book = (({book}) => {
     
     console.log(book)
@@ -16,13 +14,6 @@ const Book = (({book}) => {
     const formatDate = (date) => {
         const re = /\d{4}/;
         return date.match(re);
-        // if (date.includes(',')) {
-        //     return date.split(',')[1];
-        // } else if (date.includes(' ')) {
-        //     return date.split(' ')[1];
-        // } else {
-        //     return date;
-        // }
     }
 
     const date = formatDate(book.publish_date[0]);
@@ -31,7 +22,7 @@ const Book = (({book}) => {
     return (
         <li className="book">
             <div className="imgContainer">
-                <img src={`http://covers.openlibrary.org/b/olid/${olid}-S.jpg`} alt="" />
+                <img src={`http://covers.openlibrary.org/b/olid/${olid}-M.jpg`} alt="" />
             </div>
             <h2>{book.title}</h2>
             <h3>{book.author_name[0]}</h3>
