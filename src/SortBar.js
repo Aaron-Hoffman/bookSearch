@@ -1,4 +1,3 @@
-import SearchBar from "./SearchBar"
 import SortOption from "./SortOption"
 
 const SortBar = () => {

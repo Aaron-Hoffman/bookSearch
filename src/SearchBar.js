@@ -1,8 +1,26 @@
-const SearchBar = () => {
+import { useState } from "react";
+
+const SearchBar = ({setBooks}) => {
+
+    const [query, setQuery] = useState('');
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        fetch('http://openlibrary.org/search.json?q=the+great+gatsby')
+            .then((response) => {
+                return response.json();
+            })
+            .then((jsonResponse) => {
+                setBooks(jsonResponse.docs.filter(book => book.author_name !== undefined && book.publish_date !== undefined))
+            })
+
+    }
+
     return (
-        <form action="#">
+        <form action="#" onSubmit={handleSubmit}>
             <label htmlFor="title">Search by title</label>
-            <input type="text" name="title" id="title" placeholder="Search by title" />
+            <input type="text" name="title" id="title" placeholder="Search by title" value={query} onChange={(event) => setQuery(event.target.value)}/>
+            <button type='submit'>Search</button>
         </form>
     )
 }

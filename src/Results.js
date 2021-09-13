@@ -2,7 +2,7 @@ import Book from "./Book";
 
 const Results = ({books}) => {
     return (
-        books.map(book => <book book={book}/>)
+        books.map(book => <Book book={book}/>)
     )
 }
 
