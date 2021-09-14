@@ -25,8 +25,8 @@ const SearchBar = ({setBooks}) => {
     return (
         <form action="#" onSubmit={handleSubmit}>
             <label htmlFor="title">Search by title</label>
-            <input type="text" name="title" id="title" placeholder="Search by title" value={query} onChange={(event) => setQuery(event.target.value)}/>
-            <button type='submit'>Search</button>
+            <input type="text" name="title" id="title" placeholder="Search by title" value={query} onChange={(event) => setQuery(event.target.value)} tabIndex='0'/>
+            <button type='submit' tabIndex='0'>Search</button>
         </form>
     )
 }

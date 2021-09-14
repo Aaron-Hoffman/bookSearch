@@ -17,7 +17,7 @@ const SortOption = (({name, text, options, setBooks, books}) => {
     return (
         <>
             <label htmlFor={name}>{text}</label>
-            <select name={name} id={name} onChange={(event) => setSortOption(event.target.value)}>
+            <select name={name} id={name} onChange={(event) => setSortOption(event.target.value)} tabIndex='0'>
                 {options.map((option, index) => <option value={option} key={index}>{option}</option>)}
             </select>
         </>
