@@ -1,5 +1,5 @@
 import './App.css';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Header from './Header'
 import SearchBar from './SearchBar';
 import SortBar from './SortBar';
@@ -8,7 +8,7 @@ import Results from './Results';
 function App() {
 
   const [books, setBooks] = useState([]);
-  const [cover, setCover] = useState('');
+  // const [cover, setCover] = useState('');
 
   // const url = new URL('http://proxy.hackeryou.com');
 
@@ -32,7 +32,7 @@ function App() {
     <div className="App">
       <Header />
       <SearchBar setBooks={setBooks}/>
-      <SortBar />
+      <SortBar setBooks={setBooks} books={books}/>
       <Results books={books} />
     </div>
   );

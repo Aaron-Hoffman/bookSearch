@@ -1,6 +1,4 @@
 const Book = (({book}) => {
-    
-    console.log(book)
 
     // const isbn = book.text.filter((string) => {
     //     return string.length === 13 && Number(string);
