@@ -8,6 +8,10 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
 
+html {
+    font-size: 125%;
+}
+
 img {
     display: block;
     width: 100%;
@@ -24,6 +28,23 @@ img {
     max-width: 1200px;
 }
 
+h1 {
+    text-align: center;
+    padding: 50px;
+}
+
+form {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 10px 0;
+
+}
+
+input {
+    border: none;
+    border-bottom: 1px solid black;
+}
+
 .results {
     list-style-type: none;
     padding: 50px 0;
@@ -38,7 +59,7 @@ img {
 
 .book .imgContainer {
     width: 100%;
-    height: 300px;
+    height: calc(215px + 10vw) ;
     overflow: hidden;
     background: lightsteelblue;
     position: relative;
