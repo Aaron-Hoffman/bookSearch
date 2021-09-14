@@ -3,12 +3,16 @@ import { useState, useEffect } from "react";
 const SortOption = (({name, text, options, setBooks, books}) => {
 
     const [sortOption, setSortOption] = useState('');
-    
+
     const sortBooks = () => {
-        const sortedBooks = books.sort((lastBook, nextBook) => lastBook.title > nextBook.title ? 1 : -1);
+        console.log(sortOption)
+        // if (sortOption === '') {
+        //     return;
+        // }
+        const sortedBooks = [...books].sort((lastBook, nextBook) => lastBook.title > nextBook.title ? 1 : -1);
         setBooks(sortedBooks)
-        console.log({sortedBooks})
-        console.log({books})
+        // console.log({sortedBooks})
+        // console.log({books})
     }
 
     useEffect(sortBooks, [sortOption])

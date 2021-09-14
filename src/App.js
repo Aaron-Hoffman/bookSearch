@@ -8,6 +8,7 @@ import Results from './Results';
 function App() {
 
   const [books, setBooks] = useState([]);
+
   // const [cover, setCover] = useState('');
 
   // const url = new URL('http://proxy.hackeryou.com');
@@ -28,12 +29,14 @@ function App() {
 
   //   useEffect(getCover, [])
 
+
   return (
     <div className="App">
       <Header />
       <SearchBar setBooks={setBooks}/>
       <SortBar setBooks={setBooks} books={books}/>
-      <Results books={books} />
+      <Results books={books} /> 
+      
     </div>
   );
 }

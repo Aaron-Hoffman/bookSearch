@@ -1,13 +1,6 @@
 import Book from "./Book";
-// import { useState, useEffect } from "react";
 
 const Results = ({books}) => {
-    
-    // const [results, setResults] = useState([]);
-
-    // useEffect(() => {
-    //     setResults(books);
-    // }, [books] )
 
     return (
         <ul className="results wrapper">

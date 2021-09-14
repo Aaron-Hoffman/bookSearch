@@ -47,6 +47,7 @@ img {
 .noCover {
     position: absolute;
     top: 20%;
-    right: 20%;
-    left: 20%;
+    right: 0;
+    left: 0;
+    text-align: center;
 }
