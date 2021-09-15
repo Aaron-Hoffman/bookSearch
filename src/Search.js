@@ -7,11 +7,9 @@ const Search = ({setBooks}) => {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        const proxiedUrl = 'http://openlibrary.org/search.json';
-        const url = new URL('http://proxy.hackeryou.com');
+        const url = new URL('https://openlibrary.org/search.json');
         url.search = new URLSearchParams({
-            reqUrl: proxiedUrl,
-            'params[q]': query
+            q: query
         });
 
         fetch(url)
