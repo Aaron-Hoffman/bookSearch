@@ -21,13 +21,13 @@ const Sort = ({setBooks, books}) => {
                 const sortedBooks = [...books].sort((lastBook, nextBook) => formatDate(lastBook.publish_date[0]) > formatDate(nextBook.publish_date[0]) ? 1 : -1);
                 setBooks(sortedBooks);
         }  else {
-                const sortedBooks = [...books];
-                setBooks(sortedBooks);
+                return;
         }
+        setSortOption('');
     }
     
 
-    useEffect(sortBooks, [sortOption])
+    useEffect(sortBooks, [sortOption, setBooks, books])
 
     return (
         <form className="wrapper">
