@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const SearchBar = ({setBooks}) => {
+const Search = ({setBooks}) => {
 
     const [query, setQuery] = useState('');
 
@@ -24,11 +24,11 @@ const SearchBar = ({setBooks}) => {
 
     return (
         <form action="#" onSubmit={handleSubmit} className="wrapper">
-            <label htmlFor="title">Search by title</label>
+            <label htmlFor="title" className="sr-only">Search by title</label>
             <input type="text" name="title" id="title" placeholder="Search by title" value={query} onChange={(event) => setQuery(event.target.value)} tabIndex='0'/>
             <button type='submit' tabIndex='0'>Search</button>
         </form>
     )
 }
 
-export default SearchBar;
+export default Search;

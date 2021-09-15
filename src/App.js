@@ -1,8 +1,7 @@
 import './App.css';
 import { useState } from 'react';
 import Header from './Header'
-import SearchBar from './SearchBar';
-import SortBar from './SortBar';
+import UserControls from './UserControls';
 import Results from './Results';
 
 function App() {
@@ -33,10 +32,8 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <SearchBar setBooks={setBooks}/>
-      <SortBar setBooks={setBooks} books={books}/>
-      <Results books={books} /> 
-      
+      <UserControls setBooks={setBooks} books={books}/>
+      <Results books={books} />   
     </div>
   );
 }
