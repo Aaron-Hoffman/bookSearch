@@ -16,7 +16,7 @@ const Book = (({book}) => {
     return (
         <li className="book">
             <div className="imgContainer">
-                <img src={`https://covers.openlibrary.org/b/olid/${olid}-M.jpg`} alt="" />
+                <img src={`https://covers.openlibrary.org/b/olid/${olid}-M.jpg`} alt={`Cover art for ${book.title}`} />
                 <p className="noCover">No Cover Art Available</p>
             </div>
             <h2>{book.title}</h2>
