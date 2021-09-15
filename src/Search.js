@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Search = ({setBooks}) => {
+const Search = ({setBooks, setError}) => {
 
     const [query, setQuery] = useState('');
 
@@ -17,7 +17,13 @@ const Search = ({setBooks}) => {
                 return response.json();
             })
             .then((jsonResponse) => {
-                setBooks(jsonResponse.docs.filter(book => book.author_name !== undefined && book.publish_date !== undefined))
+                if (jsonResponse.docs[0]) {
+                    setBooks(jsonResponse.docs.filter(book => book.author_name !== undefined && book.publish_date !== undefined));
+                    setError('');
+                } else {
+                    setError("Sorry, we couldn't find any books with that title")
+                    setBooks([]);
+                }
             })
 
     }

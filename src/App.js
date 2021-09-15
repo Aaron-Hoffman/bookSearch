@@ -7,6 +7,7 @@ import Results from './Results';
 function App() {
 
   const [books, setBooks] = useState([]);
+  const [error, setError] = useState('');
 
   // const [cover, setCover] = useState('');
 
@@ -32,8 +33,9 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <UserControls setBooks={setBooks} books={books}/>
-      <Results books={books} />   
+      <UserControls setBooks={setBooks} books={books} setError={setError}/>
+      <Results books={books} /> 
+      <h2 className="error wrapper">{error}</h2>
     </div>
   );
 }
