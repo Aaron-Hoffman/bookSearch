@@ -30,7 +30,7 @@ const Sort = ({setBooks, books}) => {
     useEffect(sortBooks, [sortOption, setBooks, books])
 
     return (
-        <form className="wrapper">
+        <form className="wrapper sortForm">
             <label htmlFor='sort' className="sr-only">Sort by:</label>
             <select name='sort' id='sort' onChange={(event) => setSortOption(event.target.value)} tabIndex='0'>
                 <option value="">Sort by:</option>

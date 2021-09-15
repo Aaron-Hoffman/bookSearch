@@ -10,6 +10,21 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 
 html {
     font-size: 125%;
+    background: rgb(247, 242, 198);
+}
+
+h1,
+h2,
+p,
+input,
+button,
+select {
+    font-family: 'Roboto', sans-serif;;
+}
+
+h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
 }
 
 img {
@@ -38,17 +53,33 @@ div.controls {
     border-bottom: 1px solid black;
     padding: 10px 0;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 input {
     border: none;
     background: lightsteelblue;
     padding: 10px;
+    border-radius: 5px;
+    margin-right: 10%;
+    width: 250px;
 }
 
 button,
-input[type="select"] {
-    padding: 10px;
+select {
+    padding: 10px 25px;
+    background: white;
+    border-radius: 5px;
+    width: 250px;
+}
+
+form{
+    flex: 2;
+}
+
+.sortForm {
+    flex: 1;
 }
 
 .results {
@@ -77,4 +108,54 @@ input[type="select"] {
     right: 0;
     left: 0;
     text-align: center;
+}
+
+@media(max-width: 1070px) {
+    .results {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .book .imgContainer {
+        height: calc(300px + 10vw) ;
+    }
+
+    input,
+    button, 
+    select {
+        width: 200px
+    }
+}
+
+@media(max-width: 810px) {
+    .results {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .book .imgContainer {
+        height: calc(375px + 10vw) ;
+    }
+
+    div.controls {
+        flex-direction: column;
+    }
+
+    form.sortForm {
+        margin-top: 20px;
+        
+    }
+
+}
+
+@media(max-width: 560px) {
+    .results {
+        grid-template-columns: 1fr;
+    }
+
+    .book .imgContainer {
+        height: calc(450px + 10vw) ;
+    }
+    
+    input {
+        margin-bottom: 20px;
+    }
 }
